@@ -1,0 +1,23 @@
+<!-- <script src="sweetalert2.all.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+
+
+<div class="container m-5">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 text-center">
+            <h1 class="alert alert-primary "> Admin Login </h1>
+            <form [formGroup]="adminlogin">
+                <input type="text" placeholder="Enter Mobile Number or Username " formControlName="admin_mobile" style="font-family: monospace;" class="form-control mt-3 mb-3"> 
+
+                <input type="password" placeholder="Enter Password " formControlName="admin_password" style="font-family: monospace;" class="form-control mt-3 mb-3">
+
+                <button class="btn btn-success " (click)="admin_login()" > Login Here </button>
+            </form>
+        </div>
+        <div class="com-md-2"></div>
+    </div>
+</div>
+
+
+

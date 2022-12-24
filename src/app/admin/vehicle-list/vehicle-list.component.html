@@ -1,0 +1,45 @@
+<!-- <p>vehicle-list works!</p> -->
+
+<button class="btn btn-dark m-3 float-left" routerLink="/admin/"> Add Vehicle </button>
+<button class="btn btn-danger m-3 float-right" (click)="logout()">  Logout </button>
+
+<!-- {{data.vehicle_data[0].aa_vehicle_id}} -->
+
+<table border="1" class="text-center" width="100%" >
+    <tr>
+        <th> SR No </th>
+        <th> Vehicle Id </th>
+        <th> Vehicle Name </th>
+        <th> Vehicle Type </th>
+        <th> Vehicle Model No </th>
+        <th> Manufacture Year </th>
+        <th> Vehicle Price </th>
+        <th> Vehicle Image </th>
+        <th> Vehicle Rating </th>
+        <th> Vehicle Details  </th>
+        <th style="width:10%"> Action </th>
+    </tr>
+
+    <ng-container *ngIf="data">
+
+    <tr *ngFor="let row of data.vehicle_data;let i=index">
+        <td> {{i+1}} </td>
+        <td> {{row.aa_vehicle_id}} </td>
+        <td> {{row.vehicle_name}} </td>
+        <td>{{row.vehicle_type}} </td>
+        <td>{{row.vehicle_model_no}} </td>
+        <td> {{row.manufacture_year}} </td>
+        <td> {{row.vehicle_price}} </td>
+        <td> <img src="{{row.vehicle_image}}" alt="not found" style=" width: 200px;"> </td>
+        <td> {{row.vehicle_rating}} </td>
+        <td> {{row.vehicle_details}} </td>
+        <td>
+            <button class="btn btn-success btn-sm" [routerLink]="'/admin/edit_vehicle/'+row.aa_vehicle_id">
+                EDIT
+            </button> 
+            <button class="btn btn-danger btn-sm m-1" (click)="delete_vehicle(row.aa_vehicle_id)"> DELETE </button>
+           
+        </td>
+    </tr>
+</ng-container>
+</table>    

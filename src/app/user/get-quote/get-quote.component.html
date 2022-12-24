@@ -1,0 +1,32 @@
+
+<style>
+  label{
+    margin-bottom: 0px;
+    margin-top: 7px;
+  }
+</style>
+
+
+<h2 mat-dialog-title> Get Quate Of {{result.vehicle_name | titlecase}} </h2>
+<mat-dialog-content class="mat-typography " > 
+  <label for=""> Enter Your Name : </label>
+  <input type="text" class="form-control" #username>
+
+  <label for=" "> Enter Your Mobile Number </label>
+  <input type="tel" class="form-control" #usermobile> 
+
+  <label for=""> Enter Your Email Address </label>
+  <input type="email" class="form-control" #usermail>
+
+  <!-- <label for=""> Vehicle Name </label> -->
+  <input type="hidden" class="form-control" readonly #uservehicle value={{result.vehicle_name}}>
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button class="btn btn-dark m-3" (click)="save_data(username,usermobile,usermail,uservehicle)"> Save Data </button>
+
+  <!-- <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button> -->
+</mat-dialog-actions>
+

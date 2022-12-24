@@ -1,0 +1,38 @@
+<!-- <p>vehicle-details works!</p> -->
+
+<app-nav></app-nav>
+
+<ng-container *ngIf="data">
+<!-- {{data.vehicle_name}} -->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-5 p-5">
+            <img [src]="data.vehicle_image" alt="not found" width="100%">
+        </div>
+        <div class="col-md-7 p-5">
+            <h2 class="mb-0" style="font-family: 'Baloo 2', cursive;"> {{data.vehicle_name}}  </h2>  
+            <hr class="mb-0"> 
+            
+         <span class="mr-3 font-weight-bold " style="font-family: 'Baloo 2', cursive;font-size: 20px;" > Rating :</span> <span [innerHTML]="printstar(data.vehicle_rating)">  </span>  <br>
+
+         <span class="mr-2 font-weight-bold " style="font-family: 'Baloo 2', cursive;font-size: 20px;" > Vehicle Type :</span> <span style="font-family: 'Kanit', sans-serif;"> {{data.vehicle_type}}</span> <br>
+
+         <span class="mr-2 font-weight-bold " style="font-family: 'Baloo 2', cursive;font-size: 20px;" > Price :</span> <br> <br> <span style="font-family: 'Kanit', sans-serif;font-size: 50px;"> {{data.vehicle_price | currency:'INR ':'code'}}</span> <br> <br>
+
+         <span class="mr-2 font-weight-bold " style="font-family: 'Baloo 2', cursive;font-size: 20px;" > Model No :</span> <span style="font-family: 'Kanit', sans-serif;"> {{data.vehicle_model_no}}  </span>  <br>
+
+         <span class="mr-2 font-weight-bold " style="font-family: 'Baloo 2', cursive;font-size: 20px;" > Manufactured Year :</span> <span style="font-family: 'Kanit', sans-serif;"> {{data.manufacture_year}}  </span>  <br>
+
+         <span class="mr-2 font-weight-bold " style="font-family: 'Baloo 2', cursive;font-size: 20px;" > Vehicle Details  :</span> <span style="font-family: 'Kanit', sans-serif;"> {{data.vehicle_details}}  </span>  <br>
+
+         <div class="text-center mt-3">
+            <button class="btn btn-primary mr-3" (click)="getquote()"> Get Quote  </button>
+            <button class="btn btn-secondary" routerLink="/">Back </button>
+         </div>
+
+        </div>
+    </div>
+</div>
+
+</ng-container>

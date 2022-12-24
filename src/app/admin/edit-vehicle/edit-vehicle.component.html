@@ -1,0 +1,75 @@
+
+
+<style>
+    label{
+        margin:0px;
+        color: black;
+        font-family: monospace;
+        font-weight: bold;
+    }
+   
+    
+</style>
+
+<ng-container *ngIf="vehicle"> 
+
+<div class="row m-5 bg">
+    <div class="col-md-2 "></div>
+    <div class="col-md-8">
+        <form [formGroup]="vehicle" >
+
+            <h3 class="text-center alert alert-success"> Edit Vehicle </h3>
+
+            <div class="row">
+                <div class="col-md-6 mt-2">
+                    <label > Vehicle Type : </label>
+                    <select formControlName="vehicle_type" class="form-control">
+                        <option value="Fuel">Fuel </option>
+                        <option value="Electric"> Electric </option>
+                    </select>
+                </div>
+                <div class="col-md-6 mt-2">
+                    <label for=""> Vehicle Name : </label>
+                    <input type="text" class="form-control" formControlName="vehicle_name">
+                </div>
+                <div class="col-md-6 mt-2">
+                    <label for=""> Vehicle Model Number : </label>
+                    <input type="text" class="form-control" formControlName="vehicle_model_no">
+                </div>
+                <div class="col-md-6 mt-2">
+                    <label for=""> Manufacture Year : </label>
+                    <input type="text" class="form-control" formControlName="manufacture_year">
+                </div>
+                <div class="col-md-6 mt-2">
+                    <label for=""> Vehicle Price : </label>
+                    <input type="text" class="form-control" formControlName="vehicle_price">
+                </div>
+                <div class="col-md-4 mt-2">
+                    <label for=""> Vehicle Image : </label>
+                    <input type="file" class="form-control" (change)="saveimage($event)">
+                </div>
+                <div class="col-md-2">
+                    <img [src]="vehicle_data.vehicle_image" alt="not found" style="width:200px">
+                </div>
+                <div class="col-md-6 mt-2">
+                    <label for=""> Vehicle Rating : </label>
+                    <input type="text" class="form-control" formControlName="vehicle_rating">
+                </div>
+                <div class="col-md-6 mt-2">
+                    <label for=""> Vehicle Details : </label>
+                    <input type="text" class="form-control" formControlName="vehicle_details">
+                </div>
+                <div class="col-md-12 m-3 text-right">
+                    <button class="btn btn-dark m-3" routerLink="/admin/vehicle_list"> Back </button>
+                    <button class="btn btn-dark" (click)="update_vehicle()"> Update Vehicle </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+
+</ng-container>
+
